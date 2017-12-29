@@ -55,10 +55,4 @@ let complex = [
 ];
 
 
-
-
-
-
-
-
 console.log('debug finalized');
