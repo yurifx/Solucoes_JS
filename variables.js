@@ -7,6 +7,7 @@ var texto = "Variável texto";
 let texto2 = "Nova variavel";
 
 // numbers 
+// Note − JavaScript does not make a distinction between integer values and floating-point values. All numbers in JavaScript are represented as floating-point values. JavaScriptJavaScript represents numbers using the 64-bit floating-point format defined by the IEEE 754 standard.
 var numeroInteiro = 10;
 var numeroDecimal = 10.2;
 
