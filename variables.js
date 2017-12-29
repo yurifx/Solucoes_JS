@@ -20,6 +20,7 @@ let obj2 = {
     age: 20
 }
 
+//
 //Arrays | Lists
 let list = [];
 lista = ["item1", "item2"];
