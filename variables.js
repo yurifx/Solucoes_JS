@@ -59,7 +59,4 @@ let complex = [
     }
 ];
 
-//coment reverso
-
-
 console.log('debug finalized');
