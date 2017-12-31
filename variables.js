@@ -38,7 +38,7 @@ let func = function(name, age){
     this.age = age;
     console.log('name is: ' + name + ' age is: ' + age);
 }
-
+//Test commit mobile 
 // calling func variable that is a function
 func('calling func', 30);
 
