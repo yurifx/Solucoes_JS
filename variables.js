@@ -5,6 +5,8 @@ console.log('Iniciando o projeto Variáveis');
 // strings | texts
 var texto = "Variável texto";
 let texto2 = "Nova variavel";
+const does_not_change = "never changes";
+
 
 // numbers 
 // Note − JavaScript does not make a distinction between:
