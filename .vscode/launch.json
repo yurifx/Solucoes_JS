@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/conversoes.js"
+            "program": "${workspaceFolder}/listas.js"
         }
     ]
 }
