@@ -18,3 +18,8 @@ lista.forEach(function (el, i) {
     // lista[i] += "concatenação forEach" //2a maneira
 });
 console.log(lista);
+
+
+//Procurando um registro e retirando da lista.
+var idx = lista.indexOf(item);
+lista.splice(idx, 1);
