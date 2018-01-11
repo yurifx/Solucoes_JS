@@ -1,0 +1,6 @@
+keys: this
+
+Você poderia chamar valide em cada manipulador de evento onChange de um formulário utilizando this para passar o elemento do formulário, como no exemplo a seguir:
+
+<b>Informe um número entre 18 e 99:</b>
+<input type="text" name="idade" size=3 onChange="valide(this, 18, 99);">

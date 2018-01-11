@@ -1,0 +1,3 @@
+keys: instance, objetos, OO
+
+obj1 istance of obj2

@@ -1,0 +1,6 @@
+<p id="myid">Here is some <b>interesting</b> text</p>  
+
+console.log(document.all['myid'].innerText); // shows 'Here is some interesting text'
+console.log(document.all['myid'].outerText); // shows 'Here is some interesting text'
+console.log(document.all['myid'].innerHTML); // shows 'Here is some <b>interesting</b> text'
+console.log(document.all['myid'].outerHTML); // shows '<p id="myid">Here is some <b>interesting</b> text</p>'
