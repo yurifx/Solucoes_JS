@@ -18,6 +18,10 @@ var e = parseFloat(" 60 ")
 var f = parseFloat("40 years")
 var g = parseFloat("Text")
 
+
+//o segundo argumento é a base decimal.
+var i1 =  parseInt('10',10);
+
 console.log(a,b,c,d,e,f,g)
 
 // var d = new Date() retorna o dia de hoje;
