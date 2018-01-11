@@ -1,22 +1,11 @@
-keys: eventos, javascript, js, event, event handler
+## Resource Events
 
-<element event='some JavaScript'>
+|Event Name	    | Fired When                                                                                   | 
+----------------------------------------------------------------------------------------------------------------
+|cached         | The resources listed in the manifest have been downloaded, and the application is now cached.| 
+|error          | A resource failed to load.                                                                   |
+|abort          | The loading of a resource has been aborted.                                                  |
+|load           | A resource and its dependent resources have finished loading.                                |      
+|beforeunload   | The window, the document and its resources are about to be unloaded.                         | 
+|unload         | The document or a dependent resource is being unloaded.                                      |
 
-HTML Events
-An HTML web page has finished loading
-An HTML input field was changed
-An HTML button was clicked
-
-exemplo:
-<button onclick="document.getElementById('demo').innerHTML = Date()">The time is?</button>
-
-<button onclick="displayDate()">The time is?</button>
-
-NomeEvento      Descrição
-onchange	    An HTML element has been changed
-onclick	        The user clicks an HTML element
-onmouseover	    The user moves the mouse over an HTML element
-onmouseout	    The user moves the mouse away from an HTML element
-onkeydown	    The user pushes a keyboard key
-onload	        The browser has finished loading the page
-oninput         Quando usa o textbox.
