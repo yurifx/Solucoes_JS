@@ -86,3 +86,25 @@ function TesteLista() {
 
     //console.log(i);  //o i já morreu (uncaught reference error)
 }
+
+// Objetos outra forma:
+
+var person = {fname:"John", lname:"Doe", age:25}; 
+
+var carro = {marca:"Fiat", modelo:"Punto", cor:"Preto"}
+
+var person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:50,
+    eyeColor:"blue"
+};
+
+get ou set: carro.marca
+
+objectName.propertyName 
+objectName["propertyName"]
+
+for (x in person) {
+    text += person[x];
+}
