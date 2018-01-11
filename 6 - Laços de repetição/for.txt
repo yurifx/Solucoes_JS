@@ -1,0 +1,15 @@
+keys: for, laço, repetição, laço de repetião, laço for
+
+var elemntos =  document.getElementsByClassName("mn-person-card__person-btn-ext button-tertiary-medium-muted");
+
+for (i = 0; i < elemntos.length; i++){ 
+	x[i].click();
+}
+
+for (var i = 0; i < 100; i++){
+console.log("teste");
+}
+
+for (i = 0; i < cars.length; i++) { 
+    text += cars[i] + "<br>";
+}	

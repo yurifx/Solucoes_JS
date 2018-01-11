@@ -1,0 +1,26 @@
+keys: operacao, matematica, subtracao, soma, multiplicação, divisão, operadores, operador, operação
+
+Operator	Description
++	        Adição
+-	        Subtração
+*	        Multiplicação
+/	        Divisão
+%	        Módulo
+++	        Incremento
+--	        Decremento
+
+
+var x = 5;         
+var y = 2;    
+
+Soma:      
+var z = x + y;  
+
+Subtração
+var z = x - y;  
+
+Multiplicação:
+var z = x * y;
+
+
+

@@ -1,0 +1,6 @@
+keys: conversões, números, textos, conversão, convert, parseInt, parseFloat
+parseFloat()
+A função parseFloat() analisa um argumento do tipo string e retorna um número de ponto flutuante.
+
+parseInt()
+A função parseInt() analisa um argumento do tipo string e retorna um inteiro da base especificada (base do sistema numérico).

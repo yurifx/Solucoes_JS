@@ -1,0 +1,20 @@
+keys: access modifiers, access, modifiers, public, variáveis, escopo, global
+
+Global Automático:
+se você setar um valor a uma variável que não foi declara, ela automaticamente se tornará uma global
+
+Exemplo:
+
+<script>
+
+var carName = " Volvo";
+
+// code here can use carName
+
+function myFunction() {
+
+    // code here can use carName 
+
+}
+
+</script>

@@ -1,0 +1,9 @@
+keys: operador, operadores, ?:, ternario, condicional
+Operador condicional (ternário)
+O operador condicional é o único operador JavaScript que utiliza três operandos. O operador pode ter um de dois valores baseados em uma condição. A sintaxe é:
+
+condicao ? valor1 : valor2
+
+
+exemplo:
+var status = (idade >= 18) ? "adulto" : "menor de idade";
