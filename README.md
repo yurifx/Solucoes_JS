@@ -11,6 +11,6 @@ Solutions for rapidly dev javascript
 
 [Eventos](https://github.com/yurifx/Solutions_JS/blob/master/eventos.md)
 
-[Lists](https://github.com/yurifx/Solucoes_JS/blob/master/listas.js)
+[Lists](https://github.com/yurifx/Solutions_JS/tree/master/Listas)
 
 [OO](https://github.com/yurifx/Solutions_JS/tree/master/9%20-%20Orientação%20a%20objeto)
