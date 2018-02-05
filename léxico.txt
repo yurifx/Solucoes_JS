@@ -1,14 +1,11 @@
 keys: lexico, this
 
 
-//Léxico this
-/*Até as funções de seta, cada nova função definia seu próprio valor this (um novo objeto no caso de um construtor, indefinido em chamadas de função no modo estrito, o objeto de contexto se a função é chamada como um "método de objeto", etc.). Isso provou ser irritante com um estilo de programação orientada a objetos.
-*/
-
+//LÃ©xico this
 function Pessoa() {      // O construtor Pessoa() define 'this' como sendo ele.   
     this.idade = 0; 
-    setInterval(function crescer() {    // No modo não estrito, a função crescer define 'this'
-            // como o objeto global, o que é diferente do 'this'
+    setInterval(function crescer() {    // No modo nÃ£o estrito, a funÃ§Ã£o crescer define 'this'
+            // como o objeto global, o que Ã© diferente do 'this'
             // definido pelo construtor Pessoa().
             this.idade++; 
      }, 1000); 
