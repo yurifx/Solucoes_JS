@@ -89,3 +89,5 @@ typeof tamanho;   // retorna "number"
 typeof hoje;      // retorna "object"
 typeof naoExiste; // retorna "undefined"
 
+
+
