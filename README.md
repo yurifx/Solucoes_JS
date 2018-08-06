@@ -14,3 +14,11 @@ Solutions for rapidly dev javascript
 [Lists](https://github.com/yurifx/Solutions_JS/tree/master/Listas)
 
 [OO](https://github.com/yurifx/Solutions_JS/tree/master/9%20-%20Orientação%20a%20objeto)
+
+
+bind event key
+
+document.onkeydown = function(e){
+  console.log(e.key);
+  console.log(e);
+}
