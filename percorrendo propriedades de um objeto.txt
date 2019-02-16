@@ -1,5 +1,0 @@
-var obj = {foo: 'bar', nome: 'yuri', idade:'27'};
-
-Object.keys(obj).forEach(function (prop) {
-    console.log(prop + " : " + bar[prop]);
-});

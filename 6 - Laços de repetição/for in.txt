@@ -1,7 +1,0 @@
-keys: for, laço, repetição, laço de repetião, laço for, for in
-
-for (var prop in meuId){
-//console.log(prop);
-
-
-}

@@ -1,0 +1,5 @@
+var apagar = confirm('deseja realmente excluir este registro?');
+	if (apagar) {
+} else {
+	event.preventdefault();
+}
