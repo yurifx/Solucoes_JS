@@ -15,8 +15,22 @@
 // export { import1 as name1, import2 as name2, …, nameN } from …;
 // export { default } from …;
 
-// exports a function declared earlier
 const myFunction = () => {
     console.log("o");
 }
+
+//4 ways
+
+//es6 
+
+export default myFunction;
+
 export {myFunction} ;
+
+//old
+
+module.exports = {
+    myFunction
+}
+
+module.exports = myFunction

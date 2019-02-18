@@ -1,3 +1,8 @@
+//es6 
+
 import {myFunction} from "./export";
 
-console.log(myFunction);
+
+//old
+
+const module = require('../module');
