@@ -10,7 +10,7 @@ p.then(res => console.log(res))
  .catch(err => console.log(err))
 
 
- const p2 = name => {
+ const p2 = (name) => {
      return new Promise((req,res) => {
          if (name == "yuri"){
              res('name is ok')
