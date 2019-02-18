@@ -34,3 +34,8 @@ module.exports = {
 }
 
 module.exports = myFunction
+
+
+exports.myFunction = () => {
+    console.log('ok') 
+}

@@ -8,8 +8,8 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}/listas.js"
+            "name": "Debug",
+            "program": "${workspaceFolder}/debughere.js"
         }
     ]
 }
