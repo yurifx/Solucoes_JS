@@ -1,7 +1,5 @@
 function sum(...theArgs) {
-    return theArgs.reduce((previous, current) => {
-        return previous + current;
-    });
+    console.log(theArgs);
 }
 
 console.log(sum(1, 2, 3));

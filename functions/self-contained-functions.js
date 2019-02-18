@@ -2,20 +2,16 @@
 //Variables declared in the self executing function are, by default,
 //only available to code within the self executing function.
 
-(function() {
-  console.log("hi");
-})();
+(function() {console.log("hi");})();
 
-(() => {
-  console.log("hello");
-})();
+(() => {console.log("hello");})();
 
 
 
 
-//Simplistic.So very normal looking, its almost comforting:
+//Simplistic. So very normal looking, its almost comforting:
 
-var userName = "Sean";
+var userName = "Yuri";
 
 console.log(name());
 
