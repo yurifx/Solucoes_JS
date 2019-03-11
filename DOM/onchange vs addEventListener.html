@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+
+</head>
+<body>
+
+<input id="input_1" type="text" onchange="fireOnChange()"/>
+<input id="input_2" type="text"/>
+
+</body>    
+</html>
+	
+	
+	
+
+<script>
+
+document.getElementById('input_2').addEventListener('change', function() {
+	alert('fired from here');
+})
+
+
+const fireOnChange = () => {
+	alert('fired');
+	console.log(this);
+}
+</script>
+

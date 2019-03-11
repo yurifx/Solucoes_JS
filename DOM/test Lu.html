@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+    
+
+</head>
+</body onload="load()">
+<table id="tb" onDOMNodeInserted="alert('hi')" DOMNodeInserted="alert('oi')">
+        <td>
+            <tr>first</tr>
+        </td>
+    </table>
+    <button onclick="addrow()">Add rows</button>
+<body>
+</html>
+    
+<script>
+document.getElementById('table').addEventListener('DOMNodeInserted', function(){
+		alert("row inserted");
+});
+</script>
+	
+
+<script>
+
+
+function addrow() {
+	 var el = document.createElement('p'); 
+	 el.innerText = "new element";
+	document.getElementById('tb').appendChild(el);
+	
+	console.log('row added');
+	
+}
+
+function tbchange () {
+console.log('changed');
+}
+
+</script>
