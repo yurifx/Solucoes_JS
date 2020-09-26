@@ -1,0 +1,27 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "y",
+  "main": "debug.js",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "y",
+    "start": "nodemon './Arrays/yuritest.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurivasconcelos/Javascript.git"
+  },
+  "keywords": [
+    "y"
+  ],
+  "author": "y",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yurivasconcelos/Javascript/issues"
+  },
+  "homepage": "https://github.com/yurivasconcelos/Javascript#readme"
+}

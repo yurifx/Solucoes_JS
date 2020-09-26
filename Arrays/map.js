@@ -38,4 +38,4 @@ console.log(arrdouble);     //output: [2,4,6]
 
 myarray = [1, 2, 3];
 myarray.map((element, index) => { console.log(element, index) })
-myarray.map((e, i) => { console.log(e, i) })
+myarray.map((e, i) => { console.log(e, i) }) 
