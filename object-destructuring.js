@@ -1,9 +1,3 @@
-
-# JavaScript
-
-
-#### Object destructuring
-```javascript
 var book = { author: "mister x", name: "hey" };
 var bookComplex = {
   details: { title: "stone age", year: 2020, reallyComplex: { key: "foo" } },
@@ -54,4 +48,3 @@ const myfuncMultipleArgs = ({ details, details: { title } }) => {
 };
 myfuncMultipleArgs;
 myfuncMultipleArgs(bookComplex);
-
