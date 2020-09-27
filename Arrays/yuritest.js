@@ -48,7 +48,41 @@ arr = ["a", "b", "c"]
 otherArray = [1,2,3]
 
 var x = otherArray.map(x=> {arr.push('added')})
-console.log(x, otherArray, arr) //they don't create another variable, but instead use the loop to mutate anothe object
+console.log(x, otherArray, arr) //they don't create another variable, but instead use the loop to mutate another object
 
 
+
+//foreach is algo immutable and doesn't return anything.
+arr = [1,2,3];
+arr.forEach(x=> x = 9);
+console.log('forEach',arr); //still [1,2,3] because it's immutability
+
+arr = [1,2,3];
+// var return = arr.forEach(x=> x = 2); this would throw an error
+
+//hack way to mutate
+arr.forEach((x) => arr[0] = 'c');
+console.log('forEach', arr);
+
+/*reduce
+
+reduce(callbackfn: (previousValue/acumulator: number, currentValue: number, currentIndex: number, array: number[]) => number): number
+The return value is the accumulated result, and is provided as an argument in the next call
+
+doesn't execute for the FIRST item, because there's no previous values.
+which means that the first to be executed is the second element in the list
+
+*/
+arr = ['a', 'b', 'c']
+var res = arr.reduce((a, c) => a + c);
+console.log('simple reducer', res) //'abc'
+
+//factorial calculation:
+arr = [1,2,3,4]
+
+//acc => accumulator
+var result = arr.reduce((acc, current, currentIndex, array) => {
+    return acc * current
+});
+console.log('fatorial result', result)
 
