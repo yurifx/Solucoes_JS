@@ -142,12 +142,6 @@ arr2 = [4,5,6]
 var arr3 = arr.concat(arr2);
 console.log(arr, arr3);
 
-
-
-
-
-
-
 // map > convert each item of an array
 // imutable: doesn't change the current array but creates another one.
 arr = [1,2,3]
@@ -161,8 +155,6 @@ otherArray = [1,2,3]
 
 var x = otherArray.map(x=> {arr.push('added')})
 console.log(x, otherArray, arr) //they don't create another variable, but instead use the loop to mutate another object
-
-
 
 //foreach is algo immutable and doesn't return anything.
 arr = [1,2,3];
@@ -208,5 +200,71 @@ var arr2 = [0, 1, 2, [[[3, 4]]]];
 console.log('flat', arr2.flat()); //[0, 1, 2, [3, 4]]
 console.log('flat', arr2.flat(2)); //[0, 1, 2, [3, 4]]
 console.log('flat', arr2.flat(3)); //[0, 1, 2, 3, 4]
+
+```
+
+## Require and Exports
+Requiring/Importing:
+
+```javascript
+const myfile = require('./test.js')
+console.log(myfile)
+
+//note above, the myfile is the module.exports object of './test.js'
+
+```
+
+
+Exporting:
+
+```javascript
+const doSomething = () => {
+  console.log("from test.js logs");
+};
+
+
+//module.exports is an object that you can either use:
+module.exports = {
+   func: doSomething
+}
+// OR
+module.exports.myfunc = doSomething
+```
+
+## IMPORT / EXPORT (ES6)
+
+note: this only works with modules enabled (es6)
+
+```javascript
+
+//first way - before the declaration
+
+export function sum(x, y) {
+    return x + y;
+}
+export var pi = 3.141593;
+
+//second way:
+
+// no export keyword required here
+function myfunc() {}
+class MyClass {}
+export {myfunc, MyClass};
+
+//exporting a default module
+let myObj = {};
+export {myObj as default}; //or export default let myObj ={}
+
+// importing everything
+import * as math from "math";
+
+//importing only what you need fro
+import { sum, pi } from "math";
+
+//Renaming
+import {sum as soma} from "math";
+
+//importing a default module
+import myObj from '/object' //note you don't need the {MyObj}
 
 ```

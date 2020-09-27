@@ -9,7 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "y",
-    "start": "nodemon './Arrays/yuritest.js'"
+    "start": "nodemon './playground.js'"
   },
   "repository": {
     "type": "git",
