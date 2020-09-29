@@ -203,6 +203,16 @@ console.log('flat', arr2.flat(3)); //[0, 1, 2, 3, 4]
 
 ```
 
+
+## Array Destructuring
+
+```js
+
+arr = [1,2,3]
+
+
+```
+
 ## Require and Exports
 Requiring/Importing:
 
@@ -266,5 +276,24 @@ import {sum as soma} from "math";
 
 //importing a default module
 import myObj from '/object' //note you don't need the {MyObj}
+
+```
+
+## Agregating modules ES6
+
+sometimes you need to unify (pattern in seeeverything) all exports in one file.. you can do that by using the exports  {module1, module2} from './file.js'
+
+example: world-foods.js
+
+```javascript
+
+// import "sri-lanka" and re-export some of its exports
+export {Tea, Cinnamon} from "sri-lanka";
+
+// import "equatorial-guinea" and re-export some of its exports
+export {Coffee, Cocoa} from "equatorial-guinea";
+
+// import "singapore" and export ALL of its exports
+export * from "singapore";
 
 ```
