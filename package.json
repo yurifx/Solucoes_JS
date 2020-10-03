@@ -4,6 +4,7 @@
   "description": "y",
   "main": "debug.js",
   "dependencies": {
+    "lodash": "^4.17.20",
     "nodemon": "^2.0.4"
   },
   "devDependencies": {},

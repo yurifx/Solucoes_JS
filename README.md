@@ -1,62 +1,148 @@
 
 # JavaScript
+> https://javascript.info/#summary?map
 
 #### Object destructuring
 
-```js
-var book = { author: "mister x", name: "hey" };
-var bookComplex = {
-  details: { title: "stone age", year: 2020, reallyComplex: { key: "foo" } },
-};
+> https://javascript.info/destructuring-assignment#object-destructuring
 
-var books = [book, bookComplex];
-
-/* Simple object descruturing */
-
-var { author, } = book;
-console.log("simple obj destructuring", author);
-
-var { author, name } = book;
-console.log("simple obj destructuring obtaining 2 props", author, name);
-
-/* simple with renaming */
-const { author: x } = book;
-console.log("renaming", x);
-
-/* simple with default values */
-const { something = "dv1" } = book;
-console.log("default values", something);
-
-/* complex object destructuring */
-
-const {
-  details: { title },
-} = bookComplex;
-console.log("2x obj destructuring", title);
-
-const {
-  details: {
-    reallyComplex: { key },
+```javascript
+const person = {
+  name: 'Yuri',
+  age: 31,
+  address: {
+    street: 'Saint Albans',
+    city: 'Auckland',
+    flatmate: {
+      name: 'HR',
+      buy: ['R', 'H'],
+      age: 35,
+    },
   },
-} = bookComplex;
-console.log("3xobj destructuring", key);
-
-/*arg functions */
-
-const myfunc = ({ author }) => {
-  console.log("function args destructuring", author);
 };
-myfunc(book);
 
-/* multiple args */
-const myfuncMultipleArgs = ({ details, details: { title } }) => {
-  console.log("function multiple args destructuring", details, title);
-};
-myfuncMultipleArgs;
-myfuncMultipleArgs(bookComplex);
+var { name } = person; //name = "Yuri"
+
+//renaming a variable
+var { name: nome } = person; //name = undefined, nome = "Yuri"
+
+//getting the street (more than one destructuring)
+
+var {
+  address: { street },
+} = person; //address is undefined and street is Saint Albans
+
+var {
+  address: { flatmate },
+} = person;
+
+//complex
+var {address: {flatmate: {age}}} = person
+console.log(age);
+
+//complex renaming
+var {address: {flatmate: {age: idade}}} = person
+console.log(idade);
+
+
+// //getting more than one property at time
+var {name, address: {city}} = person
+console.log(name, city)
+
+
+//setting default values
+var {lastName = "default"} = person
+console.log(lastName)
+
+//all together
+
+const {name: rename, address:{flatmate:{age}}, lastName: lsnm="default"} = person
 
 ```
 
+Which follows the same approach when you are passing arguments to a function. 
+
+```javascript
+
+const person = {
+  name: 'Yuri',
+  age: 31,
+  address: {
+    street: 'Saint Albans',
+    city: 'Auckland',
+    flatmate: {
+      name: 'HR',
+      buy: ['R', 'H'],
+      age: 35,
+    },
+  },
+};
+
+SimpleLog(person);
+
+function SimpleLog({name}){
+    console.log(name);
+}
+
+
+//Follow the same thing we had in the othe example:
+//const {name: rename, address:{flatmate:{age}}, lastName: lsnm="default"} = person
+
+function Log({
+  name: rename,
+  address: {
+    flatmate: { age },
+  },
+  lastName: lsnm = 'default',
+}) {
+  console.log(rename, age, lsnm); //Yur, 35, default
+}
+
+Log(person);
+
+
+
+```
+## IMMUTABILITY and clonning objects
+
+```javascript
+
+const person = {
+    name: "y",
+    age: 30,
+    address: {
+        city: "Auckland"
+    }
+}
+
+
+var p1 = Object.assign({}, person, {age: 32});
+
+console.log(person, p1) //same
+
+var p2 = {...person, age: 33};
+
+console.log(person, p2);  //creates a 
+
+//WARN: -> SPREAD OPERATOR PERFORMS A SHALLOW COPY, which means that nested objects
+// will be copied the memory reference 
+
+//example:
+var p3 = {...person, age: 45}
+p3.address.city = 'UPDATED?';
+console.log(person);
+//as you can see here, the person address changed to UPDATED
+//even though we were in the p3 object.
+
+//to prevent that, you would need to copy the nested objects as well, example:
+
+var p4 = {...person, address: {...person.address}}
+p4.address.city = 'SP'
+console.log(person) //prints Auckland
+//this way it doesn't copy the reference but the values itself
+
+
+```
 ## Arrays
 
 ```js
@@ -213,73 +299,90 @@ arr = [1,2,3]
 
 ```
 
-## Require and Exports
-Requiring/Importing:
-
-```javascript
-const myfile = require('./test.js')
-console.log(myfile)
-
-//note above, the myfile is the module.exports object of './test.js'
-
-```
+## Importing, Require, Exports (importing and exporting)
 
 
-Exporting:
-
-```javascript
-const doSomething = () => {
-  console.log("from test.js logs");
-};
-
-
-//module.exports is an object that you can either use:
-module.exports = {
-   func: doSomething
-}
-// OR
-module.exports.myfunc = doSomething
-```
 
 ## IMPORT / EXPORT (ES6)
 
 note: this only works with modules enabled (es6)
 
+> There's only around 4 ways to export:
+- named export
+- default export
+- export from 
+- export lib as renamed lib
+
+
+NAMED EXPORTS:
+
+
 ```javascript
 
-//first way - before the declaration
+//before the object/function/var declaration
 
 export function sum(x, y) {
     return x + y;
 }
+
 export var pi = 3.141593;
 
-//second way:
 
-// no export keyword required here
-function myfunc() {}
+
+//in a different line
+const fnc = () => {}
 class MyClass {}
+
 export {myfunc, MyClass};
 
-//exporting a default module
-let myObj = {};
-export {myObj as default}; //or export default let myObj ={}
+-
+```
 
-// importing everything
-import * as math from "math";
+> Importing a named export:
+```javascript
 
 //importing only what you need fro
-import { sum, pi } from "math";
+import { sum, pi } from "src/math.js";
+
+//the folder structure in this case should be src/math/index.js
+import { sum, pi } from "src/math"; 
 
 //Renaming
 import {sum as soma} from "math";
 
-//importing a default module
-import myObj from '/object' //note you don't need the {MyObj}
+
+// importing everything
+import * as math from "math";
 
 ```
 
+
+**default** module
+> you can only have 1 default per file/module
+
+```javascript
+
+const fnc = () => {}
+export default fnc
+
+
+const fnc = () => {}
+export {fnc as default}; //or export default let myObj ={}
+```
+
+importing a default module
+```javascript
+
+import fnc from '/object' //don't need the {}
+
+//renaming
+import fnc as f from '/object' //don't need the {}
+
+```
+
+
 ## Agregating modules ES6
+> export * from '/...'
 
 sometimes you need to unify (pattern in seeeverything) all exports in one file.. you can do that by using the exports  {module1, module2} from './file.js'
 
@@ -296,4 +399,178 @@ export {Coffee, Cocoa} from "equatorial-guinea";
 // import "singapore" and export ALL of its exports
 export * from "singapore";
 
+```
+
+Requiring/Importing:
+
+
+> BEFORE ES2016
+
+```javascript
+const myfile = require('./test.js')
+console.log(myfile)
+
+//note above, the myfile is the module.exports object of './test.js'
+
+```
+
+```javascript
+const doSomething = () => {
+  console.log("from test.js logs");
+};
+
+
+//module.exports is an object that you can either use:
+module.exports = {
+   func: doSomething
+}
+// OR
+module.exports.myfunc = doSomething
+```
+
+The true operator '||'
+
+> returns the first *true* value.
+
+The || basically check if the object exists and if it's true.
+
+```javascript
+
+
+const notd = undefined; //false - Boolean(undefined)
+var obj = {} //if you do a Boolean({}) you will see that this is a true statement
+
+var nmb = 99 //Boolean(nmb) //true
+
+
+
+var result = x || 'yep' // returns yep
+
+var result = (condition || 'default') // if condition is true, than returns 
+
+
+
+
+```
+
+Nullish coalescing operator '??'
+
+> returns the first defined value.
+```javascript
+//The nullcoalescing basically check if the object exists, if not - do what is in after the ??
+
+const x = undefined;
+const y = false;
+const z = y.something  //also undefined
+
+console.log(x ?? 'logs?'); //logs
+console.log(y ?? 'logs?'); //false
+console.log(z ?? 'logs?'); //log
+
+
+//a lot checks
+var zzz = x ?? y ?? z ?? 'default'
+console.log(zzz); 
+
+//see here, it will return y because it is the first defined value
+
+
+var doSomething = () => console.log('doing something');
+
+var result = x ?? doSomething();
+console.log(result)
+
+```
+## HIGH ORDER FUNCTIONS
+> functions take take functions as an argument
+https://www.youtube.com/watch?v=poQXNp9ItL4&t=1233s
+
+```javascript
+function logA(){
+  console.log('log')
+}
+
+function logB(){
+  console.log('log')
+}
+
+function doSomething(logFunction){
+  logFunction()
+}
+
+doSomething(logA)
+doSomething(logB)
+doSomething(() => console.log('hey'))
+
+
+```
+
+## CURRYING & PIPE & COMPOSE
+
+> https://www.youtube.com/watch?v=poQXNp9ItL4&t=1688s
+
+```javascript
+const { replace } = require('lodash');
+// npm i lodash
+
+//Problem: replace(trim(toLower(toString()))
+
+const _ = require('lodash/fp');
+
+const trim = str => str.trim();
+const tlower = str =>  str.toLowerCase();
+const tstring = str => str.toString();
+
+// imagine that you had these 3 functions and they are not extension methods
+// you would have to do this:
+
+var rest2 = trim(tlower(tstring('mystring here')))
+
+//using pipe
+var result2 = _.pipe(tstring, trim, tlower)(124);
+console.log(result2);
+
+
+//This works because we are only passing one argument and it is the same for all functions
+//now that you want to include a replace  (which takes more than 1 argument, how would you do that?)
+
+// var rpl = (str, toBeReplaced, replaceWith) => str.replace(toBeReplaced, replaceWith)
+
+// var rest3 = _.pipe(tstring, trim, tlower, rpl('a', 'e')) //wont work!
+
+//this doesn't work because pipe is expecting a FUNCTION,
+// but instead we are returning a string.
+
+//how do you solve this problem? 
+
+//CONCEPT: Currying (Haskell Curry) -> https://www.youtube.com/watch?v=poQXNp9ItL4&t=1688s
+//Currying is a transformation of functions that translates
+// function from f(a, b, c) into callable as f(a)(b)(c).
+
+
+//which is basically, let's say that you want to implement that replace method that takes 3 arguments, string, replace, replaceWith
+var rpl = (str) => {
+    return function(toBeReplaced){
+        return function(replaceWith){
+            return str.replace(toBeReplaced, replaceWith);
+        }
+    }
+}
+//this could be shortned with anonymous lambda functions:
+var replace1= str => replaceWith => toBeReplaced => str.replace(toBeReplaced,replaceWith);
+
+//if you change the order of the parameters, you get the same result;
+var replace2 = toBeReplaced => replaceWith => str => str.replace(toBeReplaced, replaceWith);
+
+var mystring = 'abc'
+console.log(replace1(mystring)('R1')('a'));
+console.log(replace2('a')('R2')(mystring));
+
+//so now you could use the pipe and compose
+var usingPipe = _.pipe(trim, tlower, tstring, replace2('a')('pipe'))(mystring) //result: pipebc
+console.log(usingPipe);
+
+//compose is basically the same thing but in the other order
+var usingCompose= _.compose(replace2('a')('compose'), tstring, tlower, trim)(mystring);
+console.log(usingCompose);
 ```
